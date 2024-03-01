@@ -18,7 +18,12 @@ tracking and adjustments of session details.
 ### Installation
 1. Clone the repository to your local machine.
 2. Install the dependencies by running `npm install` in the project directory.
-3. The server will run on the port specified in the `server.js` file or 5000 by default.
+3. Create a `.env` file in the root directory with the following variables:
+- `DB_HOST` = Your MongoDB cluster host
+- `DB_USER` = Your MongoDB user
+- `DB_PASS` = Your MongoDB password
+- `PORT` = The port you want the server to run on (optional, defaults to 5000)
+4. The server will run on the port specified in the `server.js` file or 5000 by default.
 ## API Endpoints
 ### Sessions
 - **POST /api/sessions**: Create a new counseling session.
@@ -77,6 +82,7 @@ Updates the details of an existing session.
 
 `{id}` = `objectID` that is specified in the MongoDB.
 
+
 ## Events
 The application uses custom event emitters to log session creation, update, and
 deletion events. 
@@ -88,6 +94,7 @@ The application includes error handling for 404 (Not Found) and 500 (Internal
 Server Error) status codes, providing appropriate messages to the client.
 
 ## Testing
+
 This project contains integration tests for the API endpoints using Jest and Supertest. To ensure that the API behaves as expected, run the tests with the following command:
 
 ```bash
